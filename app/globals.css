@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@import "@airplane-loader/react/styles.css";
+@source "../packages/airplane-loader/src";
+
+:root { color-scheme: light; font-family: ui-sans-serif, system-ui, sans-serif; color: #172b3c; background: #f1f0eb; }
+* { box-sizing: border-box; }
+html, body { width: 100%; min-height: 100%; margin: 0; }
+body { -webkit-font-smoothing: antialiased; }
+.playground { min-height: 100svh; display: grid; grid-template-rows: 48px 1fr auto; justify-items: center; padding: 0 28px 18px; }
+.playground__header, .playground__install { width: min(100%, 980px); display: flex; align-items: center; }
+.playground__header { justify-content: space-between; border-bottom: 1px solid #d8ddd9; color: #526874; }
+.playground__name, .playground__status, .install-label { font: 9px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 1px; }
+.playground__status { display: flex; align-items: center; gap: 8px; color: #7c8b90; }
+.playground__status i { width: 6px; height: 6px; border-radius: 50%; background: #76a88b; }
+.playground__stage { display: grid; place-items: center; width: 100%; padding: 18px 0; }
+.playground-loader { width: min(468px, calc((100svh - 170px) * .75)); box-shadow: 0 22px 60px rgb(38 64 78 / 15%); }
+.playground__install { min-height: 48px; gap: 16px; border-top: 1px solid #d8ddd9; color: #65757c; }
+.install-label { color: #92a0a2; }
+.playground__install code { font: 10px ui-monospace, SFMono-Regular, Menlo, monospace; color: #344e60; white-space: nowrap; }
+.install-divider { height: 14px; width: 1px; background: #d2d8d5; }
+.install-npx { display: flex; align-items: center; gap: 7px; margin-left: auto; color: #899395; font-size: 10px; }
+.playground__install .install-npx code { color: #65757c; }
+@media (max-width: 900px) {
+  .playground__install { flex-wrap: wrap; justify-content: center; gap: 8px 12px; padding: 9px 0; }
+  .install-label, .install-divider { display: none; }
+  .install-npx { flex-basis: 100%; justify-content: center; margin-left: 0; }
+}
+@media (max-width: 680px) {
+  .playground { grid-template-rows: 44px 1fr auto; padding: 0 16px 10px; }
+  .playground__stage { padding: 14px 0; }
+  .playground-loader { width: min(100%, calc((100svh - 120px) * .75)); height: auto; max-width: 100%; aspect-ratio: 3 / 4; }
+  .playground__install { flex-wrap: wrap; justify-content: center; gap: 8px 14px; padding: 10px 0; }
+  .install-label, .install-divider { display: none; }
+  .playground__install code { font-size: 9px; }
+  .install-npx { flex-basis: 100%; justify-content: center; margin-left: 0; }
+}

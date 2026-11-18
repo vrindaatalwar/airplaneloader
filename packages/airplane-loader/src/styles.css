@@ -1,0 +1,14 @@
+@theme {
+  --animate-plane-loader-flight: plane-loader-flight 5s linear infinite;
+  --animate-plane-loader-progress: plane-loader-progress 5s linear infinite;
+
+  @keyframes plane-loader-flight {
+    from { left: -11%; }
+    to { left: 89%; }
+  }
+
+  @keyframes plane-loader-progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+}
